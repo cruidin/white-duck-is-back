@@ -143,6 +143,14 @@ def chat_before_game():
 def second_round():
     duck_choice = random.choice(options)
     user_choice = input("What would you like to choose: Rock, Paper or Scissors? ")
+    print(f"\nThis time you chose {user_choice}, and I chose {duck_choice}.\n")
+    time.sleep(1)
+    print("Sorry, I always need a bit of time to think about it...")
+    time.sleep(2)
+    print("...")
+    time.sleep(2)
+    print("!")
+    time.sleep(1)
     if user_choice == duck_choice:
         print("Oh! It's a tie! We have to play it again.")
         second_round()
@@ -174,6 +182,15 @@ def result():
         print("I won! No hard feelings, right? *grins*")
     else:
         print("Noooooo! I don't accept it!")
+        time.sleep(1)
+        print("Aaaaaaaaaaaaaaarrrgghhh!!!!!")
+        print("*White Duck trods on the computer*")
+        print("*White Duck is having a wobbly*")
+        print("*White Duck is extremely angry... He's gone red all over*")
+        print("*This is not a pretty sight!*")
+        time.sleep(2)
+        print("Err... Excuse me, this is the developer speaking now.")
+        print("Listen, I'm so sorry about White Duck's lack of sportsmanship.")
 
 # nervous breakdown
 # def nervous_breakdown()
