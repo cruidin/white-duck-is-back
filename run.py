@@ -1,15 +1,14 @@
 import time
 import random
 
+
 # Answers to yes or no questions
 yes = ["Y", "y", "yes"]
 no = ["N", "n", "no"]
 
 # Rock, Paper, Scissors variables
-user_score = int()
-duck_score = int()
-final_score = 3
-
+options = ["rock", "paper", "scissors"]
+winner = ["user", "duck"]
 
 # Intro
 print("Guess who's back?")
@@ -86,6 +85,7 @@ def chat():
         print("Ok, back to the beginning. But answer the question next time.")
         chat()
 
+
 def game_rules():
     """
     Before the game starts White Duck explains the rules
@@ -99,16 +99,16 @@ def game_rules():
     print("Let's get started! The rules are bla blab bka")
     time.sleep(2)
 
+
 # game of rock, paper, scissors
 def first_round():
     user_choice = input("What would you like to choose: Rock, Paper or Scissors? ")
-    options = ["rock", "paper", "scissors"]
     duck_choice = random.choice(options)
     print(f"\nOK. You chose {user_choice}, and I chose {duck_choice}.\n")
     time.sleep(1)
     print("Hmm... What does that mean? Let me think...")
     time.sleep(2)
-
+    
     if user_choice == duck_choice:
         print("Oh! It's a tie! We have to play it again.")
         first_round()
@@ -128,11 +128,52 @@ def first_round():
         else:
             print("I lost... :(")
 
-def 
 
-def best_of_three():
-    while user_score or duck_score != final_score:
+def chat_before_game():
+    print("Well done. Let's now play it again but this time it matters who wins.")
+    time.sleep(2)
+    print("And the winner will get a prize!")
+    time.sleep(2)
+    print("But before we continue can I just remind you that at the end of the day, it doesn't really matter who wins or loses.")
+    time.sleep(2)
+    print("In other words, I just need you to promise that you will keep your cool in case you lose, ok?")
+    time.sleep(2)
 
+
+def second_round():
+    duck_choice = random.choice(options)
+    user_choice = input("What would you like to choose: Rock, Paper or Scissors? ")
+    if user_choice == duck_choice:
+        print("Oh! It's a tie! We have to play it again.")
+        second_round()
+    elif user_choice == "rock":
+        if duck_choice == "scissors":
+            winner = "user"
+            print("Drat! I guess you won this turn.")
+        else:
+            winner = "duck"
+            print("I win!")
+    elif user_choice == "paper":
+        if duck_choice == "rock":
+            winner = "user"
+            print("Oh no! I lost!")
+        else:
+            winner = "duck"
+            print("I win!")
+    elif user_choice == "scissors":
+        if duck_choice == "rock":
+            winner = "duck"
+            print("I win")
+        else:
+            winner = "user"
+            print("I lost... :(")
+
+
+def result():
+    if winner == "user":
+        print("I won! No hard feelings, right? *grins*")
+    else:
+        print("Noooooo! I don't accept it!")
 
 # nervous breakdown
 # def nervous_breakdown()
@@ -140,7 +181,16 @@ def best_of_three():
 # end
 # def end()
 
+def main():
+    intro()
+    game_rules()
+    first_round()
+    chat_before_game()
+    second_round()
+    result()
 
-intro()
-#chat()
-first_round()
+print("Welcome to White Duck Is Back!")
+
+
+main()
+
