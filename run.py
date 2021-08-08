@@ -1,8 +1,15 @@
 import time
 import random
 
+# Answers to yes or no questions
 yes = ["Y", "y", "yes"]
 no = ["N", "n", "no"]
+
+# Rock, Paper, Scissors variables
+user_score = int()
+duck_score = int()
+final_score = 3
+
 
 # Intro
 print("Guess who's back?")
@@ -22,6 +29,7 @@ silly_names = ["Bibo Holiday!", "Catacata Plum!", "Carrot Bunch III!", "Pot Pot 
 
 reaction_to_name = ["Interesting name!", "What a lovely name!", "Where did you get that name? *chuckles*", "Nice", "*yawns* Sorry, I'm a bit tired... I didn't sleep that well last night. Ok. \nSorry again but that was a lie. To tell you the truth I find your name a bit boring. *yawns again*"]
 
+
 def intro():
     '''
     This is the intro=duction. White Duck is beginning to talk and asks the user's name.
@@ -37,10 +45,12 @@ def intro():
         answer = input("Oh, did I get it wrong? (Y/N)")
         if answer in yes:
             name = input("Well, why don't you tell me your name then? ")
-            print(name.capitalize() + "... " + random.choice(reaction_to_name))
 
-        else:
-            print("*chuckles* You do have a funny name!")
+            if name in silly_names:
+                print("*chuckles* You do have a funny name!")
+            
+            else:
+                print(name.capitalize() + "... " + random.choice(reaction_to_name))
 
     elif answer in no:
         print("Let me introduce myself then. I’m White Duck!")
@@ -48,12 +58,16 @@ def intro():
         print(name.capitalize() + "... " + random.choice(reaction_to_name))
 
     else:
-        print("C'mon! That was a simple question that required a simple answer!") 
+        print("C'mon! That was a simple question that required a simple answer!")
         print("But have no fear. Let's start again.")
         intro()
 
+
 # chat continues
-def chat()
+def chat():
+    """
+    This is where the main chat happens
+    """
     print("Well, my dear friend " + name + "." "Let's have a little chat now. If you want, of course. I'm not going to force you to do anything you don't want to. *winks*")
     answer = input("So you want to have a chat, right? Y/N")
     if answer in yes:
@@ -72,9 +86,52 @@ def chat()
         print("Ok, back to the beginning. But answer the question next time.")
         chat()
 
+def game_rules():
+    """
+    Before the game starts White Duck explains the rules
+    """
+    print("I'm getting a bit bored now. What do you say, we play a little game of Rock, Paper, Scissors?")
+    time.sleep(2)
+    print("That was just a rethoric question. I tell you what, we play one round just to get you used to the rules and we see how it goes! ")
+    time.sleep(2)
+    print("So it won't really matter who wins this round, ok? Then we can play best of three afterwards.")
+    time.sleep(2)
+    print("Let's get started! The rules are bla blab bka")
+    time.sleep(2)
 
 # game of rock, paper, scissors
-# def game()
+def first_round():
+    user_choice = input("What would you like to choose: Rock, Paper or Scissors? ")
+    options = ["rock", "paper", "scissors"]
+    duck_choice = random.choice(options)
+    print(f"\nOK. You chose {user_choice}, and I chose {duck_choice}.\n")
+    time.sleep(1)
+    print("Hmm... What does that mean? Let me think...")
+    time.sleep(2)
+
+    if user_choice == duck_choice:
+        print("Oh! It's a tie! We have to play it again.")
+        first_round()
+    elif user_choice == "rock":
+        if duck_choice == "scissors":
+            print("Drat! I guess you won this turn.")
+        else:
+            print("I win!")
+    elif user_choice == "paper":
+        if duck_choice == "rock":
+            print("Oh no! I lost!")
+        else:
+            print("I win!")
+    elif user_choice == "scissors":
+        if duck_choice == "rock":
+            print("I win")
+        else:
+            print("I lost... :(")
+
+def 
+
+def best_of_three():
+    while user_score or duck_score != final_score:
 
 
 # nervous breakdown
@@ -85,3 +142,5 @@ def chat()
 
 
 intro()
+#chat()
+first_round()
