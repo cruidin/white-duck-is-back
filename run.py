@@ -31,28 +31,27 @@ reaction_to_name = ["Interesting name!", "What a lovely name!", "Where did you g
 
 def intro():
     '''
-    This is the intro=duction. White Duck is beginning to talk and asks the user's name.
+    This is the introduction. White Duck is beginning to talk and asks the user's name.
     '''
     answer = input("Oh, hello there! Nice to meet you! Or have we met before? (Y/N) ")
 
     if answer in yes:
-        print("Oh that’s right! I remember you now. But what’s your name again? Wait, don’t tell me! It starts with…")
+        print("Oh that’s right! I remember you now. But what’s your name again? Wait, don’t tell me! It starts with… ")
         time.sleep(3)
         print("It's... ")
         time.sleep(2)
         print(random.choice(silly_names))
-        answer = input("Oh, did I get it wrong? (Y/N)")
+        answer = input("Oh, did I get it wrong? (Y/N) ")
         if answer in yes:
             name = input("Well, why don't you tell me your name then? ")
 
             if name in silly_names:
-                print("*chuckles* You do have a funny name!")
-            
+                print("*chuckles* You do have a funny name! ")
             else:
                 print(name.capitalize() + "... " + random.choice(reaction_to_name))
 
     elif answer in no:
-        print("Let me introduce myself then. I’m White Duck!")
+        print("Let me introduce myself then. I’m White Duck! ")
         name = input("What’s your name? ")
         print(name.capitalize() + "... " + random.choice(reaction_to_name))
 
@@ -67,10 +66,29 @@ def chat():
     """
     This is where the main chat happens
     """
-    print("Well, my dear friend " + name + "." "Let's have a little chat now. If you want, of course. I'm not going to force you to do anything you don't want to. *winks*")
-    answer = input("So you want to have a chat, right? Y/N")
+    print("Anyway...")
+    time.sleep(1)
+    print("What was I saying?")
+    time.sleep(1)
+    print("Oh yes, I know. So, my dear friend" + name() "...")
+    time.sleep(1)
+    print("\nLet's have a little chat now. If you want, of course. I'm not going to force you to do anything you don't want to. *winks*")
+    answer = input("So you want to have a chat, right? Y/N ")
     if answer in yes:
         print("Great.")
+        time.sleep(1)
+        print("I'm a bit of a chatterbox sometimes.")
+        time.sleep(1)
+        print("But sometimes I just go quiet.")
+        time.sleep(1)
+        print("One time I went quiet for a whole year. And then the next year I just couldn't stop talking!")
+        print("But after a couple of months I felt really exhausted!")
+        time.sleep(1)
+        print("But enough of talking about me for now.")
+        time.sleep(1)
+        print("Let's talk about you, " + name() + "!")
+        time.sleep(1)
+        
     elif answer in no:
         print("What do you mean, you don't want to have a chat?")
         answer = input("Ok, I'm feeling generous today so I'll give you another chance to say yes, ok? You want to have a chat, don't you? Y/N")
@@ -108,7 +126,6 @@ def first_round():
     time.sleep(1)
     print("Hmm... What does that mean? Let me think...")
     time.sleep(2)
-    
     if user_choice == duck_choice:
         print("Oh! It's a tie! We have to play it again.")
         first_round()
@@ -198,16 +215,18 @@ def result():
 # end
 # def end()
 
+
 def main():
     intro()
+    chat()
     game_rules()
     first_round()
     chat_before_game()
     second_round()
     result()
 
+
 print("Welcome to White Duck Is Back!")
 
 
 main()
-
