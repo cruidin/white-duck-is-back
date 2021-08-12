@@ -18,18 +18,23 @@ winner = ["user", "duck"]
 
 def intro():
     '''
-    This is the introduction. White Duck is beginning to talk and asks the user's name.
+    This is the introduction. White Duck is beginning to talk and asks the 
+    user's name.
     '''
-    silly_names = ["Bibo Holiday!", "Catacata Plum!", "Carrot Bunch III!", "Pot Pot Mc Pot!", "Porcini Bambini!", "Baba", "Poo", "Silly Billy", "Banana Show"]
+    silly_names = ["Bibo Holiday!", "Catacata Plum!", "Carrot Bunch III!", 
+    "Pot Pot Mc Pot!", "Porcini Bambini!", "Baba", "Poo", "Silly Billy", 
+    "Banana Show"]
 
-    reaction_to_name = ["Interesting name!", "What a lovely name!", "Where did you get that name? *chuckles*", "Nice", "*yawns* Sorry, I find your name a bit boring. *yawns again*"]
+    reaction_to_name = ["Interesting name!", "What a lovely name!", 
+    "Where did you get that name? *chuckles*", "Nice", 
+    "*yawns* Sorry, I find your name a bit boring. *yawns again*"]
 
     answer = input("Oh, hello there! Nice to meet you! Or have we met before? (Y/N) ")
 
     if answer in yes:
         print("Oh that’s right! I remember you now.")
         time.sleep(1)
-        print("But what’s your name again? Wait, don’t tell me! It starts with… ")
+        print("But what’s your name again? Wait, don’t tell me! It starts with")
         time.sleep(3)
         print("It's... ")
         time.sleep(2)
@@ -44,13 +49,14 @@ def intro():
                 print("*chuckles* You do have a funny name! ")
 
             else:
-                print(name.capitalize() + "... " + random.choice(reaction_to_name))
+                print(name.capitalize() + "... " 
+                + random.choice(reaction_to_name))
 
         elif answer in no:
             print("*chuckles* You do have a funny name! ")
 
         else:
-            print("You were meant to say 'yes' or 'no'... But it doesn't really matter.")
+            print("You were meant to say 'yes' or 'no'... But nevermind.")
 
     elif answer in no:
         print("Let me introduce myself then. I’m White Duck! ")
@@ -62,7 +68,7 @@ def intro():
             print(name.capitalize() + "... " + random.choice(reaction_to_name))
 
     else:
-        print("C'mon! That was a simple question that required a simple answer!")
+        print("C'mon! That was a yes or no type of question!")
         print("But have no fear. Let's start again.")
         intro()
 
@@ -116,7 +122,7 @@ def chat():
         chat()
 
 
-#def chat_continues():
+# def chat_continues():
 
 
 def game_rules():
@@ -228,6 +234,7 @@ def second_round():
 def duck_won():
 
     print("I won! No hard feelings, right? *grins*")
+    duck_wins()
 
 def duck_lost():
 
@@ -248,8 +255,64 @@ def duck_lost():
     time.sleep(1)
     print("Listen, I'm so sorry about White Duck's lack of sportsmanship.")
     print("He hates losing. He loses his mind whenever that happens.")
+    print("Can I just suggest that you play one more round?")
+    print("I know it's not fair though cause you won and you deserve a prize but...")
+    print("I don't know... Well, I'll leave it up to you.")
+    print("Will you give White Duck another chance?")
+
+    answer = input("Y/N ")
+
+    if answer in yes:
+        print("*footsteps approaching*")
+        print("Oh, I think our feathered friend is back. He must have heard you say yes.")
+        print("White Duck speaking now!")
+        print("Wait a second, has anyone actually dared to ask me if I want to play this silly game again?")
+
+        random_answer = ["Of course I do!", "No, I don't!", "Hmmm maybe..."]
+
+        print(random.choice(random_answer))
+
+        if random_answer in random_answer[0]:
+            second_round()
+
+        elif random_answer in random_answer[1]:
+            print("...")
+            print("Oh well, I guess then we can declare user the winner!")
+            prize()
+
+        else:
+            print("I'll do a deal with you. If you win you must share your prize with me.")
+            print("And if I win... I'll share my prize with you. I promise.")
+            answer = input("Do we have a deal? Y/N ")
+
+            if answer in yes:
+                print("Hooray! Let's go!")
+                second_round()
+
+            elif answer in no:
+                print("Ok. Goodbye!")
+                prize()
+
+            else:
+                print("Just say yes or no!")
 
 
+    if answer in no:
+        print("Fair enough. You can claim your prize now.")
+        print("QUACKQUACKQUACKQUACK ---DSIHDHS %^%$£^$(HIUIYTFCFghufyde^&%r")
+        print("Oh nevermind that noise.")
+
+
+def prize():
+    print("Congratulations! Here's your speacial prize for winning a game of Rock Paper Scissors!")
+    prize = ["A SLICE OF CAKE!",
+    "A RUBBER DUCK!",
+    "FAKE EYELASHES!",
+    ]
+    print(random.choice(prize))
+
+def duck_wins():
+    print("I am here to collect my prize!")
 
 # nervous breakdown
 # def nervous_breakdown()
