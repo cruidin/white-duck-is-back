@@ -1,5 +1,69 @@
-Project 3
+# White Duck Is Back
 
-Python
+
+## Table of contents
+
+1. [Introduction](#introduction)
+1. [Features](#features)
+    * [Future Features](#future-features)
+1. [Testing](#testing)
+    * [Validator](#validator)
+    * [Bugs](#bugs)
+1. [Deployment](#deployment)
+1. [Credits](#credits)
+    * [Websites Consulted](#websites-consulted)
+1. [Acknowledgements](#acknowledgements)
+1. [About](#about)
+
+
+## Introduction </a>
 
 The character White Duck is back for another adventure but this time in a Python program. White Duck wants to have a little chat and play a game of Rock, Paper, Scissors. The format will be of an interactive story where the user will be able to add some input as the story develops accordingly. 
+
+[Back to the top](#white-duck-is-back)
+
+## Features
+
+
+### Future Features:
+
+	
+[Back to the top](#white-duck-is-back)
+
+## Testing
+
+### Validator
+
+
+### Bugs
+
+
+[Back to the top](#white-duck-is-back)
+
+
+## Credits
+
+
+### Websites Consulted
+
+* [W3Schools](https://www.w3schools.com/)
+
+*Note:* Even though the best efforts have been made to ackowledge all the websites, articles and codes used for this project, it is possible that some of them haven't been listed here. If that is the case, I sicerely appologise. 
+
+[Back to the top](#white-duck-is-back)
+
+## Acknowledgements
+
+I would like to thank:
+* My mentor, Seun, for her help and patience
+* My husband for giving me the space and support that I needed during this project
+
+[Back to the top](#white-duck-is-back)
+
+## About
+
+My name is Patricia Melo. I am an artist and I am a Software Development student at the Code Institute. You can contact me by [email](mailto:contact@patriciamelo.ie).
+
+*******
+
+[Back to the top](#white-duck-is-back)
