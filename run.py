@@ -187,7 +187,6 @@ def second_round():
 
     while user_count < 3 or duck_count < 3:
 
-        if user_count == 3 or duck_count == 3:
 
         duck_choice = random.choice(options)
 
@@ -214,7 +213,8 @@ def second_round():
         if user_choice == duck_choice:
             calculating_result()
             print("\nOh! It's a tie! We have to play it again.")
-            second_round()
+            user_count == 0
+            duck_count == 0
 
         elif user_choice == "rock":
             calculating_result()
@@ -268,6 +268,14 @@ def second_round():
                 duck_won()
             else:
                 tie()
+ 
+        if user_count == 3:
+            
+            duck_lost()
+        
+        elif duck_count == 3:
+            
+            duck_won()
 
     print(f'White Duck: {duck_count} - You: {user_count}')
     print()
