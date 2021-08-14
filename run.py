@@ -6,9 +6,23 @@ import random
 yes = ["Y", "y", "yes"]
 no = ["N", "n", "no"]
 
-# Rock, Paper, Scissors variables
+# List with options for Rock, Paper, Scissors game
 options = ["rock", "paper", "scissors"]
-winner = ["user", "duck"]
+
+# Scores
+user_count = 0
+duck_count = 0
+
+# Option to continue game
+# continue_game = True
+
+
+# while(continue_game):
+
+#assign win, lose, and tie to zero for tallying
+win = 0 
+lose = 0 
+tie = 0 
 
 
 def intro():
@@ -167,11 +181,13 @@ def second_round():
 
     user_count = 0
     duck_count = 0
-    player = False
+    scores = {user_count: 0, duck_count: 0}
 
-    while player == False:
+    while user_count < 3 or duck_count < 3:
 
         duck_choice = random.choice(options)
+
+        user_stop = "stop"
        
         print("\nIf you want to end the game please type 'stop' at any time.")
         print()
@@ -180,18 +196,15 @@ def second_round():
 
         print(f"\nThis time you chose {user_choice}, and I chose {duck_choice}.\n")
         time.sleep(1)
-        print("\nSorry, I always need a bit of time to think about it...")
+
+        print("\nCalculating result...")
         time.sleep(2)
         print("...")
         time.sleep(2)
         print("!")
         time.sleep(1)
 
-        if player.lower() == "stop":
-            print()
-            print(f"Thanks for playing! Your final record was {user_count}-{duck_count}")
-            print()
-            break
+
 
         if user_choice == duck_choice:
             print("\nOh! It's a tie! We have to play it again.")
@@ -202,33 +215,182 @@ def second_round():
             if duck_choice == "scissors":
                 print("\nI lost!")
                 user_count += 1
+                print(f'White Duck: {duck_count} - You: {user_count}')
+
 
             else:
                 print("\nI won!")
                 duck_count += 1
+                print(f'White Duck: {duck_count} - You: {user_count}')
+
 
         elif user_choice == "paper":
 
             if duck_choice == "rock":
                 print("\nI lost!")
                 user_count += 1
+                print(f'White Duck: {duck_count} - You: {user_count}')
+
 
             else:
                 print("\nI won!")
                 duck_count += 1
+                print(f'White Duck: {duck_count} - You: {user_count}')
+
 
         elif user_choice == "scissors":
 
             if duck_choice == "rock":
                 print("\nI won!")
                 duck_count += 1
+                print(f'White Duck: {duck_count} - You: {user_count}')
+
 
             else:
                 print("\nI lost!")
                 user_count += 1
+                
+                print(f'White Duck: {duck_count} - You: {user_count}')
 
-    print(f'|White Duck: {duck_count} - You: {user_count}')
+        elif user_stop == "stop":
+            print()
+            print(f"Thanks for playing! The final score was: \nYou: {user_count} - White Duck: {duck_count}")
+            print()
+            if user_count > duck_count:
+                break
+                duck_lost()
+            elif user_count < duck_count:
+                break
+                duck_won()
+            else:
+                answer = input("It's a tie. Would you like to play again? Y/N ")
+                if answer in yes:
+                    
+                    second_round()
+
+                elif answer in no:
+                    print("Everybody is a winner!")
+                    break
+                    tie()
+
+
+    print(f'White Duck: {duck_count} - You: {user_count}')
     print()
+
+"""
+
+
+#define main 
+def second_round():
+
+    #control loop with 'y' variable 
+    scores = {1: 0, 2: 0}
+
+    #start the game 
+    while win < 3:
+        #make a welcome message and give directions
+        print('Prepare to battle in a game of paper, rock, scissors!')
+        print('Please input the correct number according')
+        print('to the object you want to choose.')
+
+        #Get the player and computers choices and 
+        #assign them to variables 
+        duck_choice = get_duck_choice()
+        user_choice = get_user_choice()
+
+        #print choices 
+        print('White Duck chose', duck_choice, '.')
+        print('You chose', user_choice, '.')
+
+        #determine who won 
+        winner_result(duck_choice, user_choice)
+
+        #ask the user if they want to play again 
+        play_again = input("Play again? Enter 'y' for yes or 'n' for no. ")
+
+    #print results 
+    print('Your total wins are', win, '.')
+    print('Your total losses are', lose, '.')
+    print('Your total ties are', tie, '.')
+
+    result = winner_result(duck_choice, user_choice)
+
+#define duck choice 
+def get_duck_choice():
+    #use imported random function from library 
+    choice = random.randint(1,3)
+
+    #assign what the computer chose to rock, paper, or scissors 
+    if choice == 1:
+        choice = 'ROCK'
+    elif choice == 2:
+        choice = 'PAPER'
+    else:
+        choice = 'SCISSORS'
+
+    #return value
+    return choice
+
+#define player choice
+def get_user_choice():
+    #assign input to variable by prompting user 
+    choice = int(input("Select rock(1), paper(2), or scissors(3): "))
+
+    #Detect invalid entry
+    while choice != 1 and choice != 2 and choice != 3:
+        print('The valid numbers are rock(type in 1), paper(type in 2),')
+        print('or scissors(type in 3).')
+        choice = int(input('Enter a valid number please: '))
+
+    #assign what the player chose based on entry 
+    if choice == 1:
+        choice = 'ROCK'
+    elif choice == 2:
+        choice = 'PAPER'
+    else:
+        choice = 'SCISSORS'
+
+    #return value 
+    return choice 
+
+#determine the winner from the variables 
+def winner_result(duck_choice, user_choice): 
+    global win, lose, tie
+    #if its a tie, add 1 to tie variable and display message 
+    if duck_choice == user_choice:
+        result = 'tie'
+        print("It's a tie!")
+
+    #if its a win, add to win tally and display message 
+    elif duck_choice == 'SCISSORS' and user_choice == 'ROCK':
+        result = 'win'
+        print('ROCK crushes SCISSORS! You win!')
+    elif duck_choice == 'PAPER' and user_choice == 'SCISSORS': 
+        result = 'win'
+        print('SCISSORS cut PAPER! You win!')
+    elif duck_choice == 'ROCK' and user_choice == 'PAPER': 
+        result = 'win'
+        print('PAPER covers ROCK! You win!')
+
+    #if it does not match any of the win criteria then add 1 to lose and 
+    #display lose message 
+    else: 
+        result = 'lose'
+        print('You lose!')
+
+    return result
+
+def result(winner_result, user_choice, duck_choice):
+
+    # accumulate the appropriate winner of game total
+    if result == 'win':
+        win += 1
+    elif result == 'lose':
+        lose += 1
+    else:
+        tie += 1
+
+"""
 
 def duck_won():
 
@@ -311,6 +473,18 @@ def prize():
 
 def duck_wins():
     print("I am here to collect my prize!")
+    prize()
+
+
+def tie():
+    print("You need to share the prize.")
+    prize()
+
+
+def end():
+    print("Goodbye!")
+    exit()
+
 
 # nervous breakdown
 # def nervous_breakdown()
@@ -318,7 +492,7 @@ def duck_wins():
 # end
 # def end()
 
-
+"""
 def main():
     intro()
     chat()
@@ -326,7 +500,10 @@ def main():
     first_round()
     chat_before_game()
     second_round()
+"""
 
+second_round()
+end()
 
 # Intro
 print("Guess who's back?")
