@@ -28,6 +28,14 @@ def intro():
     "Where did you get that name? *chuckles*", "Nice",
     "*yawns* Sorry, I find your name a bit boring. *yawns again*"]
 
+    print("Guess who's back?")
+    print("...")
+    time.sleep(2)
+    print("It's White Duck!")
+    time.sleep(3)
+    print("...")
+    time.sleep(1)
+
     print("\nOh, hello there! Nice to meet you!")
     answer = input("\nOr have we met before? (Y/N) ")
     answer = answer.lower()
@@ -137,14 +145,14 @@ def chat():
 
 def chat_continues():
 
-    answer = input("\nDo you like cooking?")
+    answer = input("\nDo you like cooking? ")
     answer = answer.lower()
 
     if answer in yes:
-        print("\Oh good! Because I don't!")
+        print("\nOh good! Because I don't!")
         time.sleep(1)
-        print("\But I love eating and I've got a great recipe here...")
-        print("\And I was wondering if you'd like to make it for me?")
+        print("\nBut I love eating and I've got a great recipe here...")
+        print("\nAnd I was wondering if you'd like to make it for me?")
 
     elif answer in no:
         print("\nThat's too bad.")
@@ -157,12 +165,12 @@ def game_rules():
     """
     Before the game starts White Duck explains the rules
     """
-    answer = input("\nWould you like to play a game of Rock, Paper, Scissors?")
+    answer = input("\nWould you like to play a game of Rock, Paper, Scissors? ")
     answer = answer.lower()
 
     if answer in yes:
         time.sleep(2)
-
+        print("\nGreat!")
         answer = input("\nDo you know the rules? Y/N ")
         answer = answer.lower()
 
@@ -170,6 +178,8 @@ def game_rules():
             print("\nGood. Let's play it!")
             print("\nFirst we play one round and see how it goes.")
             print("\nSo it won't really matter who wins this round, ok?")
+            time.sleep(2)
+            print("\nThe first round is starting now!")
         elif answer in no:
             print("\nWe play against each other.")
             print("\nWe must choose one of these:")
@@ -178,6 +188,7 @@ def game_rules():
             print("\nSCISSORS")
             print("\nRock beats Scissors beats Paper beats Rock. Very simple!")
             time.sleep(2)
+            print("\nThe first round is starting now!")
         else:
             answer = input("\nPlease say Y or N ")
             answer = answer.lower()
@@ -222,7 +233,6 @@ def first_round():
     """
     This is when the first round starts
     """
-    print("\nThe first round is starting now!")
     time.sleep(1)
     print("\nWhat would you like to choose?")
     user_choice = input("\nROCK, PAPER or SCISSORS? ")
@@ -343,7 +353,7 @@ def second_round():
         elif user_stop == "stop":
             print("\nThanks for playing! The final score was: ")
             print(f"\nYou: {user_count} - White Duck: {duck_count}")
-            print()
+            time.sleep(4)
             if user_count > duck_count:
                 duck_lost()
             elif user_count < duck_count:
@@ -465,8 +475,12 @@ def last_round():
 
 def prize():
     print("\nCongratulations!")
+    time.sleep(2)
     print("\nHere's your special prize for winning a game of")
-    print("Rock Paper Scissors!")
+    print("Rock Paper Scissors!\n")
+    time.sleep(2)
+    print("\n*drums*")
+    print("\n...\n")
     time.sleep(3)
     prize = ["A SLICE OF CAKE!",
     "A RUBBER DUCK!",
@@ -528,7 +542,12 @@ def duck_defeated():
 
 def end():
     print("\nGoodbye!\n")
-    exit()
+    answer = input("\nPlay again? (Y/N ")
+    answer = answer.lower()
+    if answer in yes:
+        main()
+    else:
+        exit()
 
 
 # nervous breakdown
@@ -549,14 +568,6 @@ def main():
 
 
 # Intro
-print("Guess who's back?")
-
-print("...")
-time.sleep(2)
-print("It's White Duck!")
-time.sleep(3)
-print("...")
-time.sleep(1)
 
 print("Welcome to White Duck Is Back!")
 
