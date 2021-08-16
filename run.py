@@ -189,6 +189,7 @@ def game_rules():
             print("\nSo it won't really matter who wins this round, ok?")
             time.sleep(2)
             print("\nThe first round is starting now!")
+            first_round()
         elif answer in no:
             print("\nWe play against each other.")
             print("\nWe must choose one of these:")
@@ -198,6 +199,7 @@ def game_rules():
             print("\nRock beats Scissors beats Paper beats Rock. Very simple!")
             time.sleep(2)
             print("\nThe first round is starting now!")
+            first_round()
         else:
             print("\nPlease say Y or N\n")
             answer = input()
