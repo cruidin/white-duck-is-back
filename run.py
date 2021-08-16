@@ -269,18 +269,24 @@ def first_round():
     elif user_choice == "rock":
         if duck_choice == "scissors":
             print("\nDrat! I guess you won this turn.")
+            chat_before_game()
         else:
             print("\nI win!")
+            chat_before_game()
     elif user_choice == "paper":
         if duck_choice == "rock":
             print("\nOh no! I lost!")
+            chat_before_game()
         else:
             print("\nI win!")
+            chat_before_game()
     elif user_choice == "scissors":
         if duck_choice == "rock":
             print("\nI win")
+            chat_before_game()
         else:
             print("\nI lost... :(")
+            chat_before_game()
 
 
 def chat_before_game():
