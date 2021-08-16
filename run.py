@@ -158,11 +158,36 @@ def chat_continues():
     if answer in yes:
         print("\nOh good! Because I don't!")
         time.sleep(1)
-        print("\nBut I love eating and I've got a great recipe here...")
-        print("\nAnd I was wondering if you'd like to make it for me?")
+        print("\nBut I love eating and I rather fancy something sweet.")
+        print("\nI was wondering if you'd make it for me? Please? (Y/N)\n")
+        answer = input()
+        answer = answer.lower()
+        if answer in yes:
+            print("Thanks! Can you make me a giant rainbow profiterole tower?")
+            print("You can google it. Shouldn't be too difficult!")
+            time.sleep(5)
+            print("Several hours later...")
+            time.sleep(3)
+            print("That was delicious but could you please make it more")
+            print("crispy next time?")
+            print("\n...")
+            time.sleep(2)
+            print("\nWe move on!")
+            time.sleep(2)
+            game_rules()
+
+        elif answer in no:
+            print("\nOh, that's a bit mean...")
+            time.sleep(2)
+            print("\nLet's do something else now.")
+            time.sleep(2)
+            game_rules()
 
     elif answer in no:
         print("\nThat's too bad.")
+        print("\nLet's do something else now.")
+        time.sleep(2)
+        game_rules()
 
     else:
         chat_continues()
@@ -184,9 +209,7 @@ def game_rules():
         answer = answer.lower()
 
         if answer in yes:
-            print("\nGood. Let's play it!")
-            print("\nFirst we play one round and see how it goes.")
-            print("\nSo it won't really matter who wins this round, ok?")
+            print("\nGood. Let's play one round and see how it goes.")
             time.sleep(2)
             print("\nThe first round is starting now!")
             first_round()
@@ -217,18 +240,16 @@ def game_rules():
 
         if answer in no:
             print("\nHmmm. Looks like you're not in the mood for anything.")
-            print("\nIn which case let's finish this at once!")
-            print("\nBut I'll give you one last chance to change your mind...")
-            print("\nWould you like to start over? (Y/N)\n")
+            print("\nIn which case let's finish this at once! (Y/N)\n")
             answer = input()
             answer = answer.lower()
 
-            if answer in yes:
+            if answer in no:
                 print("Great! Let's start again.")
                 time.sleep(2)
                 game_rules()
 
-            elif answer in no:
+            elif answer in yes:
                 print("\nWell... It was nice meeting you.")
                 time.sleep(3)
                 end()
@@ -290,17 +311,17 @@ def first_round():
 
 
 def chat_before_game():
-    print("\nWell done. Let's now play it again")
-    print("but this time it matters who wins.")
+    print("\nWell done. Let's now play it for real.")
     print("And the winner will get a prize!")
-    time.sleep(2)
+    time.sleep(3)
     print("\nBut before we continue can I just remind you that at")
     print("the end of the day, it doesn't really matter who wins or loses.")
     print("Try to keep your cool in case you lose, ok?")
-    time.sleep(2)
+    time.sleep(5)
     print("\nAnd if you want to end the game")
     print("please just type 'stop' at any time.")
-    print()
+    time.sleep(3)
+    second_round()
 
 
 def second_round():
@@ -402,36 +423,39 @@ def duck_won():
 
 def duck_lost():
     print("\nNoooooo! I don't accept it! Aaaaaaaaaaaaaaarrrgghhh!!!!!")
-    time.sleep(2)
+    time.sleep(3)
     print("\n*White Duck trods on the computer*")
-    time.sleep(1)
+    time.sleep(2)
     print("\n*White Duck is having a wobbly*")
-    time.sleep(1)
+    time.sleep(2)
     print("\n*White Duck is extremely angry... He's gone red all over*")
-    time.sleep(1)
+    time.sleep(2)
     print("\n*This is not a pretty sight!*")
     time.sleep(3)
     print("\n...")
-    time.sleep(2)
+    time.sleep(3)
     print("\nErr... Excuse me, this is the developer speaking now.")
-    time.sleep(1)
+    time.sleep(3)
     print("\nListen, I'm so sorry about White Duck's lack of sportsmanship.")
     time.sleep(2)
     print("\nCan I just suggest that you play one more round?")
+    time.sleep(3)
     print("\nI know it's not fair though cause you won")
+    time.sleep(3)
     print("and you deserve a prize but...")
+    time.sleep(3)
     print("\nWill you give White Duck another chance? (Y/N)\n")
     answer = input()
     answer = answer.lower()
 
     if answer in yes:
         print("\n*footsteps approaching*")
+        time.sleep(3)
         print("\nOh, I think our feathered friend is back.")
-        print("He must have heard you say yes.")
-        print("\nWhite Duck speaking now!")
+        time.sleep(3)
         print("Wait a second, has anyone actually asked me if")
         print("I want to play this silly game again?")
-
+        time.sleep(3)
         print("What you think? Does he want to play again? (Y/N) ")
         answer = input()
         answer = answer.lower()
@@ -441,15 +465,17 @@ def duck_lost():
             last_round()
 
         elif answer in no:
-            print("\nOh well, you got that wrong. I do want to play again!")
+            print("\nYou got that wrong. I do want to play it one more time!")
             last_round()
 
         else:
             print("\nI didn't get that but that's irrelevant because it turns")
             print("out White Duck really wants to have one last go at it.")
+            last_round()
 
     if answer in no:
         print("\nFair enough. You can claim your prize now.")
+        time.sleep(3)
         print("\nQUACKQUACKQUACKQUACK ---DSIHDHS %^%$£^$(HIUIYTFCFghufyde^&%r")
         time.sleep(3)
         print("...")
@@ -511,6 +537,7 @@ def prize():
     print("Rock Paper Scissors!\n")
     time.sleep(2)
     print("\n*drums*")
+    time.sleep(2)
     print("\n...\n")
     time.sleep(3)
     prize = ["A SLICE OF CAKE!", "A RUBBER DUCK!",
@@ -589,11 +616,12 @@ def end():
 def main():
     intro()
     chat()
+    """
     game_rules()
     first_round()
-    chat_before_game()
     second_round()
     end()
+    """
 
 
 # Intro
