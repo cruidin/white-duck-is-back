@@ -38,7 +38,7 @@ def intro():
 
     print("\nOh, hello there! Nice to meet you!")
     print("\nOr have we met before? (Y/N)\n")
-    answer = input("")
+    answer = input()
     answer = answer.lower()
 
     if answer in yes:
@@ -91,7 +91,7 @@ def intro():
 # chat continues
 def chat():
     """
-    This is where the main chat happens
+    There are two main chat functions. This is the first part
     """
     print("\nAnyway...")
     time.sleep(1)
@@ -102,10 +102,14 @@ def chat():
 
     if answer in yes:
         print("\nGreat. I'm a bit of a chatterbox sometimes.")
+        time.sleep(2)
         print("\nBut sometimes I just go quiet.")
+        time.sleep(3)
         print("\nOne time I went quiet for a whole year.")
-        print("\nAnd then the next year I just couldn't stop talking!")
-        print("\nBut after a couple of months I felt really exhausted!")
+        time.sleep(3)
+        print("\nAfter that I just couldn't stop talking!")
+        time.sleep(3)
+        print("\nEventually I felt really exhausted!")
         time.sleep(5)
         print("\nBut enough of talking about me for now.")
         time.sleep(1)
@@ -124,12 +128,12 @@ def chat():
         elif answer in no:
             print("\nOh ok then. Let's play a little game instead.")
             time.sleep(1)
-            game_rules()
+            game_intro()
 
     elif answer in no:
         print("\nWhat do you mean, you don't want to have a chat?")
         time.sleep(1)
-        print("\nDo you want to have a chat? (Y/N)\n")
+        print("\nChange your mind time! C'mon, have a chat! (Y/N)\n")
         answer = input()
         answer = answer.lower()
         if answer in yes:
@@ -140,7 +144,7 @@ def chat():
             print("\nQUACK!")
             time.sleep(2)
             print("\nHmmm... Let's play a little game instead.")
-            game_rules()
+            game_intro()
         else:
             print("\nBut that's not what I asked! Try again.")
             chat()
@@ -150,7 +154,9 @@ def chat():
 
 
 def chat_continues():
-
+    '''
+    A rather random chat continues if user choses to do so
+    '''
     print("\nDo you like cooking? (Y/N)\n")
     answer = input()
     answer = answer.lower()
@@ -168,34 +174,38 @@ def chat_continues():
             time.sleep(5)
             print("Several hours later...")
             time.sleep(3)
-            print("That was delicious but could you please make it more")
-            print("crispy next time?")
+            print("That was okay but could you make it crispier next time?")
             print("\n...")
+            print("\nThanks pal!")
             time.sleep(2)
-            print("\nWe move on!")
+            print("\nOk. We move on!")
             time.sleep(2)
-            game_rules()
+            game_intro()
 
         elif answer in no:
             print("\nOh, that's a bit mean...")
             time.sleep(2)
             print("\nLet's do something else now.")
             time.sleep(2)
-            game_rules()
+            game_intro()
 
     elif answer in no:
         print("\nThat's too bad.")
         print("\nLet's do something else now.")
         time.sleep(2)
-        game_rules()
+        game_intro()
 
     else:
         chat_continues()
 
 
-def game_rules():
+def game_intro():
     """
-    Before the game starts White Duck explains the rules
+    White Duck proposes a game of Rock Paper Scissors and offers alternatives
+    if user doesn't want to play game. If user wants to play, he explains the
+    rules
+    There's an option to end the game altogether if user doesn't want to
+    continue
     """
     print("\nWould you like to play a game of Rock, Paper, Scissors? (Y/N)\n")
     answer = input()
@@ -227,46 +237,145 @@ def game_rules():
             print("\nPlease say Y or N\n")
             answer = input()
             answer = answer.lower()
-            game_rules()
+            game_intro()
 
     elif answer in no:
         print("\nOh really? I'm a bit disappointed. We can do something else.")
         print("\nWould you like me to tell you a story? (Y/N)\n")
         answer = input()
         answer = answer.lower()
-
         if answer in yes:
-            print("\nOnce upon a time bla bla bla")
-
-        if answer in no:
+            story_duck_language()
+        elif answer in no:
             print("\nHmmm. Looks like you're not in the mood for anything.")
             print("\nIn which case let's finish this at once! (Y/N)\n")
             answer = input()
             answer = answer.lower()
-
             if answer in no:
-                print("Great! Let's start again.")
+                print("\nGreat! Let's start again.")
                 time.sleep(2)
-                game_rules()
-
+                game_intro()
             elif answer in yes:
                 print("\nWell... It was nice meeting you.")
                 time.sleep(3)
                 end()
-
             else:
                 print("\nInvalid answer. I'll take that as a no.")
                 time.sleep(3)
                 end()
-
+        else:
+            print("\nInvalid answer. I'll take that as a no.")
+            time.sleep(3)
+            end()
     else:
-        game_rules()
+        game_intro()
+
+
+def story_duck_language():
+    '''
+    White Duck mistakenly tell the story in duck language but offers the
+    option of telling the story in English afterwards or playing the game
+    There's an option to end the game altogether if user doesn't want to
+    continue
+    '''
+    print("\nOnce upon a time bla bla bla")
+    time.sleep(1)
+    print("bla bla bla bla quack quack quack")
+    time.sleep(1)
+    print("quack quack quack quack quack quack")
+    time.sleep(1)
+    print("quack quack quack bla bla bla bla ")
+    time.sleep(1)
+    print("bla bla bla bla quack quack quack")
+    time.sleep(1)
+    print("And we all lived happily ever after.")
+    time.sleep(1)
+    print("THE END!")
+    time.sleep(1)
+    print("...")
+    time.sleep(1)
+    print("WHAT??? You don't seem very impressed.")
+    time.sleep(1)
+    print("...")
+    time.sleep(1)
+    print("Oh! My bad! I just told you the story in duck language!")
+    time.sleep(1)
+    print("Apologies! I can tell you the same story in English...")
+    time.sleep(1)
+    print("YES! NOOOOOOO!")
+    answer = input()
+    answer = answer.lower()
+    if answer in yes:
+        story_english()
+    elif answer in no:
+        print("\nHave you changed your mind about playing a game then?")
+        time.sleep(1)
+        print("(Y/N)")
+        answer = input()
+        answer = answer.lower()
+        if answer in yes:
+            print("\nGreat. Let's go back to the beginning!")
+            time.sleep(1)
+            game_intro()
+        elif answer in no:
+            print("\nThen it's time to say bye!")
+            time.sleep(1)
+            end()
+        else:
+            print("\nInvalid answer. I'll take that as a no.")
+            time.sleep(3)
+            end()
+
+
+def story_english():
+    '''
+    White Duck tells the story in English and asks if user has changed
+    their mind about playing the game
+    There's an option to end the game altogether if user doesn't want to
+    continue
+    '''
+    print("\nOnce upon a time...")
+    time.sleep(1)
+    print("I met a nice person who made me a profiterole tower.")
+    time.sleep(1)
+    print("Unfortunately the profiterole tower wasn't that great.")
+    time.sleep(1)
+    print("So I told them the truth.")
+    time.sleep(1)
+    print("And I hope they learned their lesson!")
+    time.sleep(1)
+    print("And we all lived happily ever after.")
+    time.sleep(1)
+    print("THE END!")
+    time.sleep(1)
+    print("...")
+    time.sleep(1)
+    print("I hope you enjoyed it! But I have a question now.")
+    time.sleep(1)
+    print("\nHave you changed your mind about playing a game?")
+    time.sleep(1)
+    print("(Y/N)")
+    answer = input()
+    answer = answer.lower()
+    if answer in yes:
+        print("\nGreat. Let's go back to the beginning!")
+        time.sleep(1)
+        game_intro()
+    elif answer in no:
+        print("\nThen it's time to say bye!")
+        time.sleep(1)
+        end()
+    else:
+        print("\nInvalid answer. I'll take that as a no.")
+        time.sleep(3)
+        end()
 
 
 # game of rock, paper, scissors
 def first_round():
     """
     This is when the first round starts
+    It's just a trial to get used to playing the Rock Paper Scissors game
     """
     time.sleep(1)
     print("\nWhat would you like to choose?")
@@ -311,21 +420,30 @@ def first_round():
 
 
 def chat_before_game():
+    '''
+    A blurb about how the game will be played. Whoever scores 3 points
+    first wins the game.
+    There's an option to stop the game at any point if user wants
+    '''
     print("\nWell done. Let's now play it for real.")
     print("And the winner will get a prize!")
     time.sleep(3)
-    print("\nBut before we continue can I just remind you that at")
-    print("the end of the day, it doesn't really matter who wins or loses.")
-    print("Try to keep your cool in case you lose, ok?")
+    print("\nWhoever get 3 points first wins the game!")
+    time.sleep(3)
+    print("\nCan I just remind you that at the end of the day")
+    print("it doesn't really matter who wins or loses.")
     time.sleep(5)
-    print("\nAnd if you want to end the game")
-    print("please just type 'stop' at any time.")
+    print("\n(If you want to end the game please type 'stop' at any time)")
     time.sleep(3)
     second_round()
 
 
 def second_round():
-
+    '''
+    This is the main game. There are as many rounds as needed until
+    one of the players scores 3 points
+    There's a score count and for each game won the player gets one point
+    '''
     user_count = 0
     duck_count = 0
 
@@ -350,7 +468,7 @@ def second_round():
             print("!")
             time.sleep(1)
 
-        if user_choice == duck_choice:
+        if user_choice == duck_choice:  # neither players score when they tie
             calculating_result()
             print("\nOh! It's a tie! We have to play it again.")
             user_count == 0
@@ -402,22 +520,24 @@ def second_round():
             elif user_count < duck_count:
                 duck_won()
             else:
-                tie()
+                tie()  # tie scenario only happens if user stops the game
 
         if user_count == 3:
-
             duck_lost()
 
         elif duck_count == 3:
-
             duck_won()
 
-    print(f'White Duck: {duck_count} - You: {user_count}')
+    print(f'\nWhite Duck: {duck_count} - You: {user_count}')
     print()
 
 
 def duck_won():
+    '''
+
+    '''
     print("\nI won! No hard feelings, right? *grins*\n")
+    time.sleep(3)
     duck_wins()
 
 
@@ -565,27 +685,30 @@ def duck_wins():
 
 
 def tie():
+    '''
+    The user has the option to play one more round
+    '''
     print("It's a tie. Would you like to play one last round? (Y/N)\n")
     answer = input()
     answer = answer.lower()
 
     if answer in yes:
-
         last_round()
-
     elif answer in no:
         print("\nEverybody is a winner!")
         time.sleep(1)
         print("\nYou need to share the prize.")
         time.sleep(2)
         prize()
-
     else:
         print("\n Answer the question.")
         tie()
 
 
 def duck_defeated():
+    '''
+    This is the end game for duck
+    '''
     print("\n...")
     time.sleep(2)
     print("\nWhite Duck fainted... The poor fellow.")
@@ -617,7 +740,7 @@ def main():
     intro()
     chat()
     """
-    game_rules()
+    game_intro()
     first_round()
     second_round()
     end()
