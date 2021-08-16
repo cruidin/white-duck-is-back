@@ -38,7 +38,7 @@ def intro():
 
     print("\nOh, hello there! Nice to meet you!")
     print("\nOr have we met before? (Y/N)\n")
-    answer = input()
+    answer = input("")
     answer = answer.lower()
 
     if answer in yes:
@@ -475,19 +475,25 @@ def last_round():
     elif user_choice == "rock":
         if duck_choice == "scissors":
             print("\n:(")
+            duck_defeated()
 
         else:
             print("\nI win!")
+            duck_wins()
     elif user_choice == "paper":
         if duck_choice == "rock":
             print("\nOh no! I lost!")
+            duck_defeated()
         else:
             print("\nI win!")
+            duck_wins()
     elif user_choice == "scissors":
         if duck_choice == "rock":
             print("\nI win")
+            duck_wins()
         else:
             print("\nI lost... :(")
+            duck_defeated()
 
 
 def prize():
