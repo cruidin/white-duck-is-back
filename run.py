@@ -729,13 +729,6 @@ def end():
         exit()
 
 
-# nervous breakdown
-# def nervous_breakdown()
-
-# end
-# def end()
-
-
 def main():
     intro()
     chat()
