@@ -21,12 +21,12 @@ def intro():
     user's name.
     '''
     silly_names = ["Bibo Holiday!", "Catacata Plum!", "Carrot Bunch III!",
-    "Pot Pot Mc Pot!", "Porcini Bambini!", "Baba", "Popo", "Silly Billy",
-    "Banana Show"]
+                   "Pot Pot Mc Pot!", "Porcini Bambini!", "Baba", "Popo",
+                   "Silly Billy", "Banana Show"]
 
     reaction_to_name = ["Interesting name!", "What a lovely name!",
-    "Where did you get that name? *chuckles*", "Nice",
-    "*yawns* Sorry, I find your name a bit boring. *yawns again*"]
+                        "Where did you get that name? *chuckles*", "Nice",
+                        "*yawns* Sorry, boring name. *yawns again*"]
 
     print("Guess who's back?")
     print("...")
@@ -64,8 +64,8 @@ def intro():
                 print("\n*chuckles* You do have a funny name! ")
 
             else:
-                print(name.capitalize() + "... "
-                + random.choice(reaction_to_name))
+                print(name.capitalize() + "... " +
+                      random.choice(reaction_to_name))
 
         elif answer in no:
             print("\n*chuckles* You do have a funny name! ")
@@ -499,14 +499,11 @@ def prize():
     print("\n*drums*")
     print("\n...\n")
     time.sleep(3)
-    prize = ["A SLICE OF CAKE!",
-    "A RUBBER DUCK!",
-    "A PAIR OF FAKE EYELASHES!",
-    "A PINK UMBRELLA!",
-    "A PAIR OF READING GLASSES!",
-    "A RECIPE BOOK!",
-    "A ROMANTIC DINNER IN A FANCY RESTAURANT!",
-    "A RIDE ON A ROLLERCOASTER!"]
+    prize = ["A SLICE OF CAKE!", "A RUBBER DUCK!",
+             "A PAIR OF FAKE EYELASHES!", "A PINK UMBRELLA!",
+             "A PAIR OF READING GLASSES!", "A RECIPE BOOK!",
+             "A ROMANTIC DINNER IN A FANCY RESTAURANT!",
+             "A RIDE ON A ROLLERCOASTER!"]
     print(random.choice(prize))
     time.sleep(3)
     end()
