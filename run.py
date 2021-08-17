@@ -1,3 +1,9 @@
+# White Duck Is Back!
+# By Patricia Melo
+# https://github.com/cruidin
+
+
+#imports
 import time
 import random
 
@@ -20,14 +26,15 @@ def intro():
     This is the introduction. White Duck is beginning to talk and asks the
     user's name.
     '''
+    # variable with random names when Duck tries to guess user's name
     silly_names = ["Bibo Holiday!", "Catacata Plum!", "Carrot Bunch III!",
                    "Pot Pot Mc Pot!", "Porcini Bambini!", "Baba", "Popo",
                    "Silly Billy", "Banana Show"]
-
+    # random reactions by Duck to user's name
     reaction_to_name = ["Interesting name!", "What a lovely name!",
                         "Where did you get that name? *chuckles*", "Nice",
                         "*yawns* Sorry, boring name. *yawns again*"]
-
+    # Presentation
     print("Guess who's back?")
     print("...")
     time.sleep(2)
@@ -36,11 +43,12 @@ def intro():
     print("...")
     time.sleep(1)
 
+    # White Duck greets user
     print("\nOh, hello there! Nice to meet you!")
     print("\nOr have we met before? (Y/N)\n")
     answer = input()
     answer = answer.lower()
-
+    # Duck tries to 'remember' user's name
     if answer in yes:
         print("\nOh that’s right! I remember you now.")
         time.sleep(1)
@@ -51,15 +59,14 @@ def intro():
         time.sleep(2)
         print(random.choice(silly_names))
         time.sleep(1)
-
         print("\nOh, did I get it wrong? (Y/N)\n")
         answer = input()
         answer = answer.lower()
-
+        # White Duck asks for user's name
         if answer in yes:
             print("\nWell, why don't you tell me your name then?\n")
             name = input()
-
+            # In case user types one of the random names Duck reacts to it
             if name in silly_names:
                 print("\n*chuckles* You do have a funny name! ")
 
@@ -69,12 +76,13 @@ def intro():
 
         elif answer in no:
             print("\n*chuckles* You do have a funny name! ")
-
+        # It's not really relevant if user doens't answer correctly
         else:
             print("\nYou were meant to say 'yes' or 'no'... But nevermind.")
-
+    # White Duck introduces himself in case user doesn't know him
     elif answer in no:
         print("\nLet me introduce myself then. I’m White Duck! ")
+        # He asks for user's name
         print("\nWhat’s your name?\n")
         name = input()
         if name in silly_names:
@@ -82,7 +90,7 @@ def intro():
 
         else:
             print(name.capitalize() + "... " + random.choice(reaction_to_name))
-
+    # Replay function in case of incorrect input
     else:
         print("\nC'mon! That was a yes or no type of question!")
         intro()
@@ -93,13 +101,14 @@ def chat():
     """
     There are two main chat functions. This is the first part
     """
+    # Duck asks if user wants to have a chat
     print("\nAnyway...")
     time.sleep(1)
     print("\nLet's have a little chat now.")
     print("\nSo you want to have a chat, right? (Y/N)\n")
     answer = input()
     answer = answer.lower()
-
+    # White Duck talks for a bit
     if answer in yes:
         print("\nGreat. I'm a bit of a chatterbox sometimes.")
         time.sleep(2)
@@ -109,12 +118,11 @@ def chat():
         time.sleep(3)
         print("\nAfter that I just couldn't stop talking!")
         time.sleep(3)
-        print("\nEventually I felt really exhausted!")
-        time.sleep(5)
-        print("\nBut enough of talking about me for now.")
-        time.sleep(1)
-        print("\nLet's talk about you!")
-        time.sleep(1)
+        print("\n...")
+        time.sleep(3)
+        print("\nBut enough of that for now. Let's talk about you!")
+        time.sleep(2)
+        # The chat will continue if user wishes so
         print("\nIf you want? (Y/N)\n")
         answer = input()
         answer = answer.lower()
@@ -124,15 +132,20 @@ def chat():
             print("\nSo...")
             time.sleep(1)
             chat_continues()
-
+        # Otherwise he proposes they play a game
         elif answer in no:
             print("\nOh ok then. Let's play a little game instead.")
             time.sleep(1)
             game_intro()
-
+        # Chat replay if invalid answer is given
+        else:
+            print("\nWrong answer!")
+            chat()
+    # Duck gets a bit cross if user doesn't want to chat
     elif answer in no:
         print("\nWhat do you mean, you don't want to have a chat?")
         time.sleep(1)
+        # User is given another chance to change their mind
         print("\nChange your mind time! C'mon, have a chat! (Y/N)\n")
         answer = input()
         answer = answer.lower()
@@ -165,6 +178,7 @@ def chat_continues():
         print("\nOh good! Because I don't!")
         time.sleep(1)
         print("\nBut I love eating and I rather fancy something sweet.")
+        time.sleep(2)
         print("\nI was wondering if you'd make it for me? Please? (Y/N)\n")
         answer = input()
         answer = answer.lower()

@@ -29,9 +29,13 @@ I created this character for my last portolio project on JavaScript and decided 
 
 ## Features
 
+
+
 ### Technical Features
 
 The project is written in Python (version 3.8.11).
+
+Topics covered:
 
 Time module
 Random module
@@ -52,6 +56,7 @@ This is a narrative based app in which a character called White Duck interacts w
 ### Future Features:
 
 There's scope for developing this project further by adding more scenarios and options of different paths and games. 
+There's also the potential to explore more features and libraries to add more sophistication to the app.
 Also, I believe the code can be simplified further and be made more efficient.
 On a non technical note, there’s obviously room for improvement in the content and flow of story being told as the game evolves.  
 
@@ -74,7 +79,9 @@ It was pretty straight forward to find a solution for handling invalid inputs in
 
 When I started coding for this project, I initially used the `input()` function with the text inside it. While running the code in Gitpod, this method of displaying did not present any problems but once I deployed my app to Heroku I could see that this was problematic because the app was displaying the input prompt before the question. I fixed it by removing the text from the `input()` and using the `print()` function for that purpose.
 
+*Missing code on Gitpod*
 
+This is not technically a testing issue but while doing one of the last tests before submitting this project, I noticed that the `second_round()` function wans't running properly because the part of the code responsible for limiting the score to 3 was missing. This was possibly due to a problem I had with Gitpod in which a considerable part of my code had gone missing. Happily, I had pushed my code to Github earlier on so it looks like I was able to retrieve most of my most up to date work. As advised by Jim Morel on a Gitpod post on Slack (seems like I’m not the first person affected by this problem), I started a new workspace. Unfortunately, the new workspace also had a problem so I had to start a third one. Anyway, it's possible that the disappearance of that part of the code was caused by the confusion of having to deal with this problem.
 
 ### Validator
 
