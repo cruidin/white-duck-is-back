@@ -383,17 +383,17 @@ def first_round():
     user_choice = input()
     user_choice = user_choice.lower()
     duck_choice = random.choice(options)
-    
+
     def calculating_result():
-      print(f"\nOK. You chose {user_choice}, and I chose {duck_choice}.\n")
-      time.sleep(1)
-      print("\nCalculating result...")
-      time.sleep(2)
-      print("...")
-      time.sleep(2)
-      print("!")
-      time.sleep(1)
-    
+        print(f"\nOK. You chose {user_choice}, and I chose {duck_choice}.\n")
+        time.sleep(1)
+        print("\nCalculating result...")
+        time.sleep(2)
+        print("...")
+        time.sleep(2)
+        print("!")
+        time.sleep(1)
+
     if user_choice == duck_choice:
         calculating_result()
         print("\nOh! It's a tie! We have to play it again.")
@@ -427,8 +427,8 @@ def first_round():
             chat_before_game()
 
     else:
-      print("\nPlease type a valid option!\n")
-      first_round()
+        print("\nPlease type a valid option!\n")
+        first_round()
 
 
 def chat_before_game():
@@ -622,28 +622,31 @@ def last_round():
     user_choice = user_choice.lower()
     duck_choice = random.choice(options)
 
-    print(f"\nYou chose {user_choice}, and I chose {duck_choice}.\n")
-    time.sleep(1)
+    def calculating_result():
+        print(f"\nYou chose {user_choice}, and I chose {duck_choice}.\n")
+        time.sleep(1)
 
-    print("\nCalculating result...")
-    time.sleep(2)
-    print("...")
-    time.sleep(2)
-    print("!")
-    time.sleep(1)
+        print("\nCalculating result...")
+        time.sleep(2)
+        print("...")
+        time.sleep(2)
+        print("!")
+        time.sleep(1)
 
     if user_choice == duck_choice:
+        calculating_result()
         print("\nOh! It's a tie!")
         tie_prize()
     elif user_choice == "rock":
+        calculating_result()
         if duck_choice == "scissors":
             print("\n:(")
             duck_defeated()
-
         else:
             print("\nI win!")
             duck_wins()
     elif user_choice == "paper":
+        calculating_result()
         if duck_choice == "rock":
             print("\nOh no! I lost!")
             duck_defeated()
@@ -651,6 +654,7 @@ def last_round():
             print("\nI win!")
             duck_wins()
     elif user_choice == "scissors":
+        calculating_result()
         if duck_choice == "rock":
             print("\nI win")
             duck_wins()
@@ -658,8 +662,8 @@ def last_round():
             print("\nI lost... :(")
             duck_defeated()
     else:
-      print("\nPlease type a valid option!\n")
-      last_round()
+        print("\nPlease type a valid option!\n")
+        last_round()
 
 
 def prize():
