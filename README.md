@@ -5,6 +5,8 @@
 
 1. [Introduction](#introduction)
 1. [Features](#features)
+    * [Technical Features](#technical-features)
+    * [Content Features](#content-features)	
     * [Future Features](#future-features)
 1. [Testing](#testing)
     * [Validator](#validator)
@@ -12,6 +14,7 @@
 1. [Deployment](#deployment)
 1. [Credits](#credits)
     * [Websites Consulted](#websites-consulted)
+1. [Final Comments](#final-comments)
 1. [Acknowledgements](#acknowledgements)
 1. [About](#about)
 
@@ -25,6 +28,8 @@ I created this character for my last portolio project on JavaScript and decided 
 [Back to the top](#white-duck-is-back)
 
 ## Features
+
+### Technical Features
 
 The project is written in Python (version 3.8.11).
 
@@ -40,23 +45,39 @@ Handling incorrect input
 .lower
 .capitalize
 
+### Content Features
+
+This is a narrative based app in which a character called White Duck interacts with the user. The Duck talks a lot before he suggests they play a game of Rock, Paper, Scissors. I tried to make it humorous and slightly nonsensical because that’s how the style I use when working on my art creations. Obviously, my main objective is to learn and apply my technical programming skills but to me this is also an opportunity to combine my own art work with coding which is kind of the point of why I’m learning to program. 
+
 ### Future Features:
 
-There's scope for developing this project further by adding more scenarios and options of differents paths and games. 
-Also, I believe the code can be simplified further.
+There's scope for developing this project further by adding more scenarios and options of different paths and games. 
+Also, I believe the code can be simplified further and be made more efficient.
+On a non technical note, there’s obviously room for improvement in the content and flow of story being told as the game evolves.  
 
-	
+    
 [Back to the top](#white-duck-is-back)
 
 ## Testing
 
-I constantly tested my code.
+I constantly tested my code. While testing, here are some of the issues I encountered:
+
+*The score in the function `second_round()` kept on resetting.*
+
+I had this issue at different stages of my coding. Initially, I didn’t know how to set up the score count. Because of it I wasn’t going to include a score count but my mentor advised me to do it. When I got it set up it didn’t work well because the score was resetting each time a new round was being played. I also had to handle the issue of the number of rounds that were to be played. This was tricky to solve because it was easy to just leave it open to unlimited rounds and up to the user to stop the game at their wish. But that makes it too obvious to the user so a limit of scores was crucial.
+
+*Handling invalid input*
+
+It was pretty straight forward to find a solution for handling invalid inputs in yes/no situations. However, when it came to the game functions `first_round()`, `second_round()` and `last_round()`, things were less obvious. The way I had my code structured, especially in the case of the `second_round()` function in which there’s a little more complexity due to the score count and a limited number of rounds, I had originally specified a variable 
 
 ### Validator
 
 Passed the pep8online validator
 
 ### Bugs
+
+expected two blank lines pep8 
+UnboundLocalError: local variable referenced before assignment
 
 
 [Back to the top](#white-duck-is-back)
@@ -65,7 +86,7 @@ Passed the pep8online validator
 
 Heroku
 
-The deployment set up occured smoothly without any problems or errors although it did take some time for the app to become available at Heroku.
+The deployment set up occurred smoothly without any problems or errors although it did take some time for the app to become available at Heroku.
 
 I regret not having deployed my app at the time I started working on my project but I still deployed it in time to adjust my code to the Heroku platform. 
 
@@ -80,16 +101,38 @@ I regret not having deployed my app at the time I started working on my project 
 * [W3Schools](https://www.w3schools.com/)
 * [Pep8online Validator](http://pep8online.com/)
 * [Replit](https://replit.com/)
+* [Heroes Academy](https://intropython-fall2016.readthedocs.io/en/latest/tutorials/index.html)
+* [Pep8online Validator](http://pep8online.com/)
+* [Replit](https://replit.com/)
+* [W3Schools](https://www.w3schools.com/)
+* [Pep8online Validator](http://pep8online.com/)
+* [Replit](https://replit.com/)
+* [W3Schools](https://www.w3schools.com/)
+* [Pep8online Validator](http://pep8online.com/)
+* [Replit](https://replit.com/)
+* [W3Schools](https://www.w3schools.com/)
+* [Pep8online Validator](http://pep8online.com/)
+* [Replit](https://replit.com/)
 
-*Note:* Even though the best efforts have been made to ackowledge all the websites, articles and codes used for this project, it is possible that some of them haven't been listed here. If that is the case, I sicerely appologise. 
+*Note:* Even though the best efforts have been made to acknowledge all the websites, articles and codes used for this project, it is possible that some of them haven't been listed here. If that is the case, I sincerely apologise. 
+
+[Back to the top](#white-duck-is-back)
+
+## Final Comments
+
+Overall, I enjoyed working on this project. Unlike the trauma that my JavaScript project inflicted on me (lol), I was able to stay more focused and calm for most of the time. 
+
+Initially, I realised that due to the abstract nature of the command line was going to require a rethink on how 
+
+I want to take the opportunity here to say that things only started making sense when I started my project. It seems to me that the best way for me to learn is by blindingly diving into a completely new language and then figuring out how to navigate through it as opposed to the more classic way of learning the theory then applying it afterwards. So I took the more unorthodox approach here and it worked - I’m not saying that my project is brilliant but rather just stating that I actually learned an awful lot and I understand now every single thing that I did here which is great.
 
 [Back to the top](#white-duck-is-back)
 
 ## Acknowledgements
 
 I would like to thank:
-* My mentor, Seun, for her help and patience
-* My husband for giving me the space and support that I needed during this project
+* My mentor, Seun, for her help and invaluable insights
+* My children, for giving me some space to work on this project
 
 [Back to the top](#white-duck-is-back)
 
@@ -100,3 +143,4 @@ My name is Patricia Melo. I am an artist and I am a Software Development student
 *******
 
 [Back to the top](#white-duck-is-back)
+
