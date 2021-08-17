@@ -383,40 +383,52 @@ def first_round():
     user_choice = input()
     user_choice = user_choice.lower()
     duck_choice = random.choice(options)
-
-    print(f"\nOK. You chose {user_choice}, and I chose {duck_choice}.\n")
-    time.sleep(1)
-    print("\nCalculating result...")
-    time.sleep(2)
-    print("...")
-    time.sleep(2)
-    print("!")
-    time.sleep(1)
-
+    
+    def calculating_result():
+      print(f"\nOK. You chose {user_choice}, and I chose {duck_choice}.\n")
+      time.sleep(1)
+      print("\nCalculating result...")
+      time.sleep(2)
+      print("...")
+      time.sleep(2)
+      print("!")
+      time.sleep(1)
+    
     if user_choice == duck_choice:
+        calculating_result()
         print("\nOh! It's a tie! We have to play it again.")
         first_round()
     elif user_choice == "rock":
         if duck_choice == "scissors":
+            calculating_result()
             print("\nDrat! I guess you won this turn.")
             chat_before_game()
         else:
+            calculating_result()
             print("\nI win!")
             chat_before_game()
     elif user_choice == "paper":
         if duck_choice == "rock":
+            calculating_result()
             print("\nOh no! I lost!")
             chat_before_game()
         else:
+            calculating_result()
             print("\nI win!")
             chat_before_game()
     elif user_choice == "scissors":
         if duck_choice == "rock":
+            calculating_result()
             print("\nI win")
             chat_before_game()
         else:
+            calculating_result()
             print("\nI lost... :(")
             chat_before_game()
+
+    else:
+      print("\nPlease type a valid option!\n")
+      first_round()
 
 
 def chat_before_game():
@@ -451,7 +463,6 @@ def second_round():
 
         duck_choice = random.choice(options)
 
-        user_stop = "stop"
         print("\nWhat would you like to choose?")
         print("\nROCK, PAPER or SCISSORS?\n")
         user_choice = input()
@@ -511,7 +522,7 @@ def second_round():
 
                 print(f'White Duck: {duck_count} - You: {user_count}')
 
-        elif user_stop == "stop":
+        elif user_choice == "stop":
             print("\nThanks for playing! The final score was: ")
             print(f"\nYou: {user_count} - White Duck: {duck_count}")
             time.sleep(4)
@@ -522,11 +533,9 @@ def second_round():
             else:
                 tie()  # tie scenario only happens if user stops the game
 
-        if user_count == 3:
-            duck_lost()
-
-        elif duck_count == 3:
-            duck_won()
+        else:
+            print("\nPlease type a valid option!\n")
+            continue
 
     print(f'\nWhite Duck: {duck_count} - You: {user_count}')
     print()
@@ -648,6 +657,9 @@ def last_round():
         else:
             print("\nI lost... :(")
             duck_defeated()
+    else:
+      print("\nPlease type a valid option!\n")
+      last_round()
 
 
 def prize():
