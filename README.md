@@ -68,7 +68,13 @@ I had this issue at different stages of my coding. Initially, I didn’t know ho
 
 *Handling invalid input*
 
-It was pretty straight forward to find a solution for handling invalid inputs in yes/no situations. However, when it came to the game functions `first_round()`, `second_round()` and `last_round()`, things were less obvious. The way I had my code structured, especially in the case of the `second_round()` function in which there’s a little more complexity due to the score count and a limited number of rounds, I had originally specified a variable 
+It was pretty straight forward to find a solution for handling invalid inputs in yes/no situations. However, when it came to the game functions `first_round()`, `second_round()` and `last_round()`, things were less obvious. The way I had my code structured, especially in the case of the `second_round()` function in which there’s a little more complexity due to the score count and a limited number of rounds, made it tricky to add a simple 'invalid input' message and a rerun of the code. The solution for my problem in the `second_round()` function was to insert a `continue` statement inside the `else` statement in the `while` loop. Without the `continue` statement, everytime the user inserted an invalid input the score count was reset. For the other two functions there was no requirement to use the `continue` statement because the score is not being counted so a simple return to the beginning would sufice. The only difficulty was in regards to displaying the order in which the lines were being printed. For that reason, I had to add a `calculating_result()` function and insert it inside each `if`/`elif` statements to avoid an incorrect display of the text.  
+
+*Input function*
+
+When I started coding for this project, I initially used the `input()` function with the text inside it. While running the code in Gitpod, this method of displaying did not present any problems but once I deployed my app to Heroku I could see that this was problematic because the app was displaying the input prompt before the question. I fixed it by removing the text from the `input()` and using the `print()` function for that purpose.
+
+
 
 ### Validator
 
@@ -76,8 +82,15 @@ Passed the pep8online validator
 
 ### Bugs
 
-expected two blank lines pep8 
-UnboundLocalError: local variable referenced before assignment
+*expected two blank lines pep8*
+
+*UnboundLocalError: local variable referenced before assignment*
+
+*E501 line too long*
+
+*continuation line under-indented for visual indent*
+
+*Exception has occurred: EOFError*
 
 
 [Back to the top](#white-duck-is-back)
@@ -89,6 +102,8 @@ Heroku
 The deployment set up occurred smoothly without any problems or errors although it did take some time for the app to become available at Heroku.
 
 I regret not having deployed my app at the time I started working on my project but I still deployed it in time to adjust my code to the Heroku platform. 
+
+The link to the deployed app can be found [here](https://white-duck-is-back.herokuapp.com/).
 
 [Back to the top](#white-duck-is-back)
 
@@ -102,16 +117,16 @@ I regret not having deployed my app at the time I started working on my project 
 * [Pep8online Validator](http://pep8online.com/)
 * [Replit](https://replit.com/)
 * [Heroes Academy](https://intropython-fall2016.readthedocs.io/en/latest/tutorials/index.html)
-* [Pep8online Validator](http://pep8online.com/)
-* [Replit](https://replit.com/)
-* [W3Schools](https://www.w3schools.com/)
-* [Pep8online Validator](http://pep8online.com/)
-* [Replit](https://replit.com/)
-* [W3Schools](https://www.w3schools.com/)
-* [Pep8online Validator](http://pep8online.com/)
-* [Replit](https://replit.com/)
-* [W3Schools](https://www.w3schools.com/)
-* [Pep8online Validator](http://pep8online.com/)
+* [Stack Abuse](https://stackabuse.com/getting-user-input-in-python/)
+* [Ask Python](https://www.askpython.com/python/text-based-adventure-game)
+* [Making an Adventure Game in Python - Leon Marsden](https://www.youtube.com/watch?v=EbAdsK8s0-U)
+* [Break, Continue, and Pass Statements - Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-use-break-continue-and-pass-statements-when-working-with-loops-in-python-3)
+* [Real Python](https://realpython.com/python-rock-paper-scissors/)
+* [The Coding Pie](https://thecodingpie.com/post/make-your-own-text-based-adventure-game-in-python3)
+* [Diffchecker](https://www.diffchecker.com/diff)
+* [CI - README template](https://github.com/Code-Institute-Solutions/readme-template)
+* [Programiz](https://www.programiz.com/python-programming/modules)
+* [Stack Overflow](http://stackoverflow.com)
 * [Replit](https://replit.com/)
 
 *Note:* Even though the best efforts have been made to acknowledge all the websites, articles and codes used for this project, it is possible that some of them haven't been listed here. If that is the case, I sincerely apologise. 
@@ -120,11 +135,11 @@ I regret not having deployed my app at the time I started working on my project 
 
 ## Final Comments
 
-Overall, I enjoyed working on this project. Unlike the trauma that my JavaScript project inflicted on me (lol), I was able to stay more focused and calm for most of the time. 
+Overall, I enjoyed working on this project. Unlike the drama and the trauma that my JavaScript project inflicted on me (lol), I was able to stay more focused and calm for most of the time. That's not to say though that this project wasn't challenging.
 
-Initially, I realised that due to the abstract nature of the command line was going to require a rethink on how 
+Initially, I realised that, due to the more abstract nature of the command line, I needed to rethink how to approach it. I spent some time exploring and learning about the Python `turtle` Library and I entertained the idea of doing my project with it. I eventually settled for an interactive story with a game of Rock, Paper, Scissors.
 
-I want to take the opportunity here to say that things only started making sense when I started my project. It seems to me that the best way for me to learn is by blindingly diving into a completely new language and then figuring out how to navigate through it as opposed to the more classic way of learning the theory then applying it afterwards. So I took the more unorthodox approach here and it worked - I’m not saying that my project is brilliant but rather just stating that I actually learned an awful lot and I understand now every single thing that I did here which is great.
+I want to take the opportunity here to say that things only started making sense when I started my project. It seems to me that the best way for me to learn is by blindingly diving into a completely new language and then figuring out how to navigate through it as opposed to the more classic way of learning the theory then applying it afterwards. So I took the more unorthodox approach here and it worked - I’m not saying that my project is brilliant but rather just stating that I actually learned an awful lot by doing it the way I did and I understand now every single thing that I did here which is great.
 
 [Back to the top](#white-duck-is-back)
 

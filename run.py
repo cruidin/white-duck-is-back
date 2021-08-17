@@ -484,6 +484,7 @@ def second_round():
             print("\nOh! It's a tie! We have to play it again.")
             user_count == 0
             duck_count == 0
+            print(f'White Duck: {duck_count} - You: {user_count}')
 
         elif user_choice == "rock":
             calculating_result()
@@ -537,6 +538,12 @@ def second_round():
             print("\nPlease type a valid option!\n")
             continue
 
+        if user_count == 3:
+            duck_lost()
+
+        elif duck_count == 3:
+            duck_won()
+
     print(f'\nWhite Duck: {duck_count} - You: {user_count}')
     print()
 
@@ -555,7 +562,7 @@ def duck_lost():
     time.sleep(3)
     print("\n*White Duck trods on the computer*")
     time.sleep(2)
-    print("\n*White Duck is having a wobbly*")
+    print("\n*White Duck is throwing a wobbly*")
     time.sleep(2)
     print("\n*White Duck is extremely angry... He's gone red all over*")
     time.sleep(2)
@@ -579,8 +586,6 @@ def duck_lost():
 
     if answer in yes:
         print("\n*footsteps approaching*")
-        time.sleep(3)
-        print("\nOh, I think our feathered friend is back.")
         time.sleep(3)
         print("Wait a second, has anyone actually asked me if")
         print("I want to play this silly game again?")
@@ -609,6 +614,7 @@ def duck_lost():
         time.sleep(3)
         print("...")
         print("\nOh nevermind that noise.")
+        time.sleep(3)
         prize()
 
 
