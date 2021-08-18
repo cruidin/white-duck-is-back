@@ -706,6 +706,9 @@ def duck_lost():
         print("\nOh nevermind that noise.")
         time.sleep(3)
         prize()
+    else:
+        print("\nWrong answer!")
+        duck_lost()
 
 
 def last_round():
@@ -881,6 +884,10 @@ def end():
 
 
 def main():
+    '''
+    Calls functions to be played. All other functions are being
+    called from within functions
+    '''
     intro()
     chat()
 

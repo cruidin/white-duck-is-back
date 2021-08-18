@@ -6,6 +6,7 @@
 
 1. [Introduction](#introduction)
 1. [Features](#features)
+    * [Functions](#functions)
     * [Technical Features](#technical-features)
     * [Content Features](#content-features)	
     * [Future Features](#future-features)
@@ -30,59 +31,143 @@ I created this character for my last portolio project on JavaScript and decided 
 
 ## Features
 
+How app looks on different screens:
+
 [Am I Responsive?](/assets/images/amiresponsive_wdib.png)
+
+Chart:
+
+[Chart](/assets/images/chart_wdib.png)
+
+### Functions
 
 `intro()`:
 
-This is the introduction. White Duck is beginning to talk and asks the user's name.
+This is the introduction. White Duck is beginning to talk and asks the user's name. 
+
+Features random module, time module, input function, print function, if/else/elif statements. Leads to `chat()`
+
 
 `chat()`:
 
 There are two main chat functions. This is the first part
 
+Features time module, input function, print function, if/else/elif statements. Leads to `chat_continues()` or `game_intro()` or `chat()`
+
 `chat_continues()`: 
 
 A rather random chat continues if user choses to do so
+
+Features time module, input function, print function, if/else/elif statements. Leads to `chat_continues()` or `game_intro()`
 
 `game_intro()`:
 
 White Duck proposes a game of Rock Paper Scissors and offers alternatives if user doesn't want to play game. If user wants to play, he explains the rules
 There's an option to end the game altogether if user doesn't want to continue
 
+Features time module, input function, print function, if/else/elif statements. Leads to `first_round()` or `game_intro()` or `story_duck_language()` or `end()`
+
 `story_duck_language()`:
 
 White Duck mistakenly tell the story in duck language but offers the option of telling the story in English afterwards or playing the game
 There's an option to end the game altogether if user doesn't want to continue
+
+Features time module, input function, print function, if/else/elif statements. Leads to `story_english()` or `game_intro()` or `end()`
 
 `story_english()`:
 
 White Duck tells the story in English and asks if user has changed their mind about playing the game
 There's an option to end the game altogether if user doesn't want to continue
 
+Features time module, input function, print function, if/else/elif statements. Leads to `end()` or `game_intro()`
+
 `first_round()`:
 
 This is when the first round starts
 It's just a trial to get used to playing the Rock Paper Scissors game
 
+Features list, random module, time module, input function, print function, if/else/elif statements, function inside function. Leads to `chat_before_game()` or `first_round()`
+
 `calculating_result()`:
 
 Function inside games functions
+
+Features time module, print function.
 
 `chat_before_game()`:
 
 A blurb about how the game will be played. Whoever scores 3 pointsfirst wins the game.
 There's an option to stop the game at any point if user wants
 
+Features time module, print function. Leads to `second_round()`
+
 `second_round()`:
 
 This is the main game. There are as many rounds as needed until one of the players scores 3 points
 There's a score count and for each game won the player gets one point
 
+Features random module, time module, input function, print function, while loop, score count, function inside function, option to stop round, if/else/elif statements. Leads to `tie()` or `duck_lost()` or `duck_won()`
+
 `duck_won()`:
 
 Duck is a bit cheeky when he wins
 
+Features time module, print function. Leads to `duck_wins()`
+
 `duck_lost()`:
+
+Duck reacts quite badly when he loses
+
+Features time module, input function, print function, if/else/elif statements. Leads to `last_round()` or `prize()`
+
+`last_round()`:
+
+This code is very similat to first_round. The difference being that if they tie the round ends and both players must share the prize
+
+Features time module, input function, print function, function inside function, if/else/elif statements. Leads to `duck_wins()` or `duck_defeated()` or `tie_prize()` or `last_round()`
+
+`prize()`:
+
+Winner is congratulated and given a prize
+
+Features time module, print function, list. Leads to `end()`
+
+`tie_prize()`:
+
+Both players are winners. Function called from last_round
+
+Features time module, print function. Leads to `prize()`
+
+`duck_wins()`:
+
+Duck claims his prize
+
+Features time module, print function. Leads to `prize()`
+
+`tie()`:
+
+The user has the option to play one more round
+Function called from second_round in the event of a tie
+
+Features time module, input function, print function, if/else/elif statements. Leads to `tie()` or `prize()` or `last_round()`
+
+`duck_defeated()`:
+
+This is the end game for duck
+
+Features time module, print function. Leads to `prize()`
+
+`end()`:
+
+Enf of game with option to play again
+
+Features time module, input function, print function, if/else statements. Leads to `main()` or `exit()` 
+
+`main()`:
+
+Calls functions to be played. All other functions are being called from within functions
+
+Features functions. Leads to main `intro()` then `chat()`
 
 ### Technical Features
 
@@ -147,11 +232,19 @@ When I started coding for this project, I initially used the `input()` function 
 
 This is not technically a testing issue but while doing one of the last tests before submitting this project, I noticed that the `second_round()` function wans't running properly because the part of the code responsible for limiting the score to 3 was missing. This was possibly due to a problem I had with Gitpod in which a considerable part of my code had gone missing. Happily, I had pushed my code to Github earlier on so it looks like I was able to retrieve most of my most up to date work. As advised by Jim Morel on a Gitpod post on Slack (seems like I’m not the first person affected by this problem), I started a new workspace. Unfortunately, the new workspace also had a problem so I had to start a third one. Anyway, it's possible that the disappearance of that part of the code was caused by the confusion of having to deal with this problem.
 
+*Pauses*
+
+I ran my code every day multiple times to make sure that the timing of the lines when displayed where flowing harmonically. Some pauses are longer than others to ensure that user is able to read line by line. 
+
 ### Validator
 
 Passed the pep8online validator
 
 ### Bugs
+
+All problems have been cleared
+
+*trailing whitespace*
 
 *expected two blank lines pep8*
 
@@ -208,9 +301,11 @@ The link to the deployed app can be found [here](https://white-duck-is-back.hero
 
 Overall, I enjoyed working on this project. Unlike the drama and the trauma that my JavaScript project inflicted on me (lol), I was able to stay more focused and calm for most of the time. That's not to say though that this project wasn't challenging.
 
-Initially, I realised that, due to the more abstract nature of the command line, I needed to rethink how to approach it. I spent some time exploring and learning about the Python `turtle` Library and I entertained the idea of doing my project with it. I eventually settled for an interactive story with a game of Rock, Paper, Scissors.
+Initially, I realised that, due to the more abstract nature of the command line, I needed to rethink how to approach it. I spent some time exploring and learning about the Python `turtle` Library and I entertained the idea of doing my project with it. But I eventually settled for an interactive story with a game of Rock, Paper, Scissors.
 
 I want to take the opportunity here to say that things only started making sense when I started my project. It seems to me that the best way for me to learn is by blindingly diving into a completely new language and then figuring out how to navigate through it as opposed to the more classic way of learning the theory then applying it afterwards. So I took the more unorthodox approach here and it worked - I’m not saying that my project is brilliant but rather just stating that I actually learned an awful lot by doing it the way I did and I understand now every single thing that I did here which is great.
+
+Also, I am aware that some things could have been done better like the way I documented the testing. Instead of documenting each phase of the testing, which I can assure was done constantly, I just kept on going without taking proper note of it. This is something I will certainly try to improve when working on future projects. But for now, once again, I've ran out of time so I won't be able to present all the tests performed.
 
 [Back to the top](#white-duck-is-back)
 
