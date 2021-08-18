@@ -877,6 +877,7 @@ def end():
         main()
     else:
         print("The END")
+        exit()
 
 
 def main():
