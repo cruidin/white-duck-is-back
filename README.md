@@ -1,6 +1,6 @@
 # White Duck Is Back
 
-(/assets/images/white-duck-glasses2.png)
+![WHITE DUCK](/assets/images/white-duck-glasses2.png)
 
 ## Table of contents
 
@@ -33,11 +33,11 @@ I created this character for my last portolio project on JavaScript and decided 
 
 How app looks on different screens:
 
-(/assets/images/amiresponsive_wdib.png)
+![Am I Responsive?](/assets/images/amiresponsive_wdib.png)
 
 Chart:
 
-(/assets/images/chart_wdib.png)
+![Chart](/assets/images/chart_wdib.png)
 
 ### Functions
 
