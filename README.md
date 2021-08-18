@@ -29,7 +29,57 @@ I created this character for my last portolio project on JavaScript and decided 
 
 ## Features
 
+`intro()`:
 
+This is the introduction. White Duck is beginning to talk and asks the user's name.
+
+`chat()`:
+
+There are two main chat functions. This is the first part
+
+`chat_continues()`: 
+
+A rather random chat continues if user choses to do so
+
+`game_intro()`:
+
+White Duck proposes a game of Rock Paper Scissors and offers alternatives if user doesn't want to play game. If user wants to play, he explains the rules
+There's an option to end the game altogether if user doesn't want to continue
+
+`story_duck_language()`:
+
+White Duck mistakenly tell the story in duck language but offers the option of telling the story in English afterwards or playing the game
+There's an option to end the game altogether if user doesn't want to continue
+
+`story_english()`:
+
+White Duck tells the story in English and asks if user has changed their mind about playing the game
+There's an option to end the game altogether if user doesn't want to continue
+
+`first_round()`:
+
+This is when the first round starts
+It's just a trial to get used to playing the Rock Paper Scissors game
+
+`calculating_result()`:
+
+Function inside games functions
+
+`chat_before_game()`:
+
+A blurb about how the game will be played. Whoever scores 3 pointsfirst wins the game.
+There's an option to stop the game at any point if user wants
+
+`second_round()`:
+
+This is the main game. There are as many rounds as needed until one of the players scores 3 points
+There's a score count and for each game won the player gets one point
+
+`duck_won()`:
+
+Duck is a bit cheeky when he wins
+
+`duck_lost()`:
 
 ### Technical Features
 
