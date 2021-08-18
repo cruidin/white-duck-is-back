@@ -88,16 +88,27 @@ The project is written in Python (version 3.8.11).
 Topics covered:
 
 Time module
+
 Random module
+
 Lists
+
 Functions
+
 Loops
+
 If/elif/else statements
+
 Built in functions: input(), print()
+
 Score count
+
 Handling incorrect input
+
 .lower
+
 .capitalize
+
 
 ### Content Features
 
