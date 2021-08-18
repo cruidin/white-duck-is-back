@@ -270,9 +270,7 @@ def game_intro():
             time.sleep(1)
             first_round()
         else:
-            print("\nPlease say Y or N\n")
-            answer = input()
-            answer = answer.lower()
+            print("\nWrong answer!\n")
             game_intro()
     # If user doesn't want to play game they can choose to have a story or not
     elif answer in no:
@@ -433,7 +431,6 @@ def first_round():
     """
     time.sleep(1)
     print("\nWhat would you like to choose?")
-    time.sleep(2)
     print("\nROCK, PAPER or SCISSORS?\n")
     user_choice = input()
     user_choice = user_choice.lower()
@@ -507,7 +504,7 @@ def chat_before_game():
     # Best of 5
     print("\nWell done. Let's now play it for real.")
     time.sleep(2)
-    print("And the winner will get a prize!")
+    print("\nAnd the winner will get a prize!")
     time.sleep(3)
     print("\nWhoever gets 3 points first wins the game!")
     time.sleep(3)
@@ -540,7 +537,6 @@ def second_round():
         duck_choice = random.choice(options)
 
         print("\nWhat would you like to choose?")
-        time.sleep(2)
         print("\nROCK, PAPER or SCISSORS?\n")
         user_choice = input()
         user_choice = user_choice.lower()
@@ -802,7 +798,7 @@ def prize():
              "A PAIR OF FAKE EYELASHES!", "A PINK UMBRELLA!",
              "A PAIR OF READING GLASSES!", "A RECIPE BOOK!",
              "A ROMANTIC DINNER IN A FANCY RESTAURANT!",
-             "A RIDE ON A ROLLERCOASTER!"]
+             "A RIDE ON A ROLLERCOASTER!", "A PROFITEROLE TOWER!"]
     # Prints a random prize from the list
     print(random.choice(prize))
     time.sleep(3)
